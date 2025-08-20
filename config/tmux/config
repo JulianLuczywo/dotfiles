@@ -1,0 +1,39 @@
+# --- Appearance ---
+set -g status on
+set -g status-interval 5
+set -g status-justify left
+set -g status-bg colour236
+set -g status-fg white
+set -g status-left-length 60
+set -g status-right-length 120
+
+set -g mouse on
+
+unbind r
+bind r source-file `/.config/tmux/tmux.conf
+
+# --- Left side ---
+set -g status-left '#[bg=green,fg=black,bold] #S #[default]#[bg=yellow,fg=white,bold] ↑ #(uptime -p | cut -d " " -f2-) #[default]
+
+# --- Window list ---
+setw -g window-status-format '#[fg=grey,bg=black] #I #W '
+setw -g window-status-current-format '#[fg=blue,bg=black,bold] #I #W '
+# setw -g window-status-current-bg colour33
+# setw -g window-status-current-fg white
+# setw -g window-status-bg black
+# setw -g window-status-fg grey
+
+# --- Right side ---
+set -g status-right '#(~/scripts/cpu_bar.sh) #[fg=green,bold]#(~/scripts/battery_percent.sh) #[default]| #[fg=white]%H:%M | %d %b #[default]| #[bg=red,fg=whit$
+
+# --- Remove window separators for a cleaner look ---
+set -g window-status-separator ""
+
+# --- Optional: more readable pane borders ---
+set -g pane-border-style fg=colour238
+set -g pane-active-border-style fg=colour39
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'

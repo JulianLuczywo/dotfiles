@@ -1,0 +1,26 @@
+# Theme and Appearance
+theme = zenwritten_dark
+window-padding-color = background
+background-opacity = 0.90
+background-blur-radius = 12
+
+# Window Size
+window-width = 120
+window-height = 32
+
+# Fonts
+font-family = MesloLGS Nerd Font Mono
+font-size = 14
+font-feature = -liga
+window-title-font-family = Inter
+
+# Cursor
+cursor-style = block
+adjust-cursor-thickness = 3
+
+# Shell Integration
+shell-integration = zsh
+
+# Nice-to-haves
+window-decoration = true
+gtk-titlebar = true
